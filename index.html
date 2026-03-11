@@ -446,6 +446,67 @@ body::before {
 }
 
 /* ══════════════════════════════════════════════════════
+   COVER LOGO
+══════════════════════════════════════════════════════ */
+.cover-logo {
+  position: absolute;
+  right: 88px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  opacity: 0.88;
+  filter: drop-shadow(0 0 32px rgba(0,207,255,0.35));
+}
+
+/* ══════════════════════════════════════════════════════
+   LABS SHOWCASE SLIDE
+══════════════════════════════════════════════════════ */
+.labs-sub {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-top: -18px;
+  margin-bottom: 32px;
+}
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 980px;
+}
+
+.lab-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--lab-col, var(--accent));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--lab-col, var(--accent)) 12%, transparent);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.lab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 32px color-mix(in srgb, var(--lab-col, var(--accent)) 25%, transparent);
+}
+
+.lab-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+/* ══════════════════════════════════════════════════════
    FINALE SLIDE
 ══════════════════════════════════════════════════════ */
 .slide.finale {
@@ -542,7 +603,7 @@ body::before {
   background: var(--accent);
   box-shadow: 0 0 10px var(--accent);
   transition: width 0.45s cubic-bezier(0.4,0,0.2,1), background 0.5s, box-shadow 0.5s;
-  width: 2.86%; /* 1/35 */
+  width: 2.78%; /* 1/36 */
 }
 
 .hud-num {
@@ -621,6 +682,7 @@ body::before {
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
 
+  <img class="cover-logo anim-el" src="images/ci.png" alt="CI-UFPB">
   <div class="cover-eyebrow anim-el">CI-UFPB · Orientação Vocacional</div>
   <h1 class="cover-title anim-el">Decifrando<em>o Futuro.</em></h1>
   <p class="cover-sub anim-el">A jornada pelos 4 pilares do Centro de Informática da UFPB — e como eles vão moldar o mundo.</p>
@@ -1210,8 +1272,29 @@ Storytelling com dados</div>
   </ul>
 </div>
 
-<!-- ━━━━━━━━━━━━━━━━ 30 MARKET ━━━━━━━━━━━━━━━━ -->
-<div class="slide" data-act="5" data-num="30" data-title="Mercado de Trabalho — Robótica">
+<!-- ━━━━━━━━━━━━━━━━ 30 LABS ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="5" data-num="30" data-title="Laboratórios do Centro de Informática">
+  <div class="corner tl"></div><div class="corner tr"></div>
+  <div class="corner bl"></div><div class="corner br"></div>
+  <div class="act-label anim-el">Ato V · Eng. de Robótica</div>
+  <h2 class="slide-title anim-el">Laboratórios do<br>Centro de Informática</h2>
+  <div class="accent-line anim-el"></div>
+  <p class="labs-sub anim-el">nossas experiências</p>
+  <div class="labs-grid anim-el">
+    <div class="lab-card" style="--lab-col: #1E7FE0">
+      <img src="images/laser.png" alt="LASER">
+    </div>
+    <div class="lab-card" style="--lab-col: #0077BB">
+      <img src="images/lmi.png" alt="LMI">
+    </div>
+    <div class="lab-card" style="--lab-col: #00C896">
+      <img src="images/tril.png" alt="tril">
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━ 31 MARKET ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="5" data-num="31" data-title="Mercado de Trabalho — Robótica">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="act-label anim-el">Ato V · Eng. de Robótica</div>
@@ -1244,8 +1327,8 @@ Big Techs (Boston Dynamics)</div>
 
 <!-- ════════════════ ATO VI · FINALE ═══════════════ -->
 
-<!-- ━━━━━━━━━━━━━━━━ 31 ━━━━━━━━━━━━━━━━ -->
-<div class="slide" data-act="6" data-num="31" data-title="O Mercado Global de Tecnologia">
+<!-- ━━━━━━━━━━━━━━━━ 32 ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="6" data-num="32" data-title="O Mercado Global de Tecnologia">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="act-label anim-el">Ato VI · Grand Finale</div>
@@ -1270,8 +1353,8 @@ Big Techs (Boston Dynamics)</div>
   </ul>
 </div>
 
-<!-- ━━━━━━━━━━━━━━━━ 32 ━━━━━━━━━━━━━━━━ -->
-<div class="slide" data-act="6" data-num="32" data-title="Projeções de Futuro">
+<!-- ━━━━━━━━━━━━━━━━ 33 ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="6" data-num="33" data-title="Projeções de Futuro">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="act-label anim-el">Ato VI · Grand Finale</div>
@@ -1290,8 +1373,8 @@ Big Techs (Boston Dynamics)</div>
   </ul>
 </div>
 
-<!-- ━━━━━━━━━━━━━━━━ 33 COMPARISON ━━━━━━━━━━━━━━━━ -->
-<div class="slide" data-act="6" data-num="33" data-title="Guia de Escolha — Qual Curso é Seu?">
+<!-- ━━━━━━━━━━━━━━━━ 34 COMPARISON ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="6" data-num="34" data-title="Guia de Escolha — Qual Curso é Seu?">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="act-label anim-el">Ato VI · Grand Finale</div>
@@ -1341,8 +1424,8 @@ Big Techs (Boston Dynamics)</div>
   </div>
 </div>
 
-<!-- ━━━━━━━━━━━━━━━━ 34 ━━━━━━━━━━━━━━━━ -->
-<div class="slide" data-act="6" data-num="34" data-title="CI-UFPB — Por que aqui?">
+<!-- ━━━━━━━━━━━━━━━━ 35 ━━━━━━━━━━━━━━━━ -->
+<div class="slide" data-act="6" data-num="35" data-title="CI-UFPB — Por que aqui?">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="act-label anim-el">Ato VI · Grand Finale</div>
@@ -1360,8 +1443,8 @@ Big Techs (Boston Dynamics)</div>
   </ul>
 </div>
 
-<!-- ━━━━━━━━━━━━━━━━ 35 FINALE ━━━━━━━━━━━━━━━━ -->
-<div class="slide finale" data-act="6" data-num="35" data-title="O futuro é programado">
+<!-- ━━━━━━━━━━━━━━━━ 36 FINALE ━━━━━━━━━━━━━━━━ -->
+<div class="slide finale" data-act="6" data-num="36" data-title="O futuro é programado">
   <div class="glow-line left"></div>
   <div class="glow-line right"></div>
   <p class="finale-top anim-el">CI-UFPB · Orientação Vocacional · 2025</p>
